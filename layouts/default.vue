@@ -5,6 +5,7 @@
       :clipped="clipped"
       v-model="drawer"
       fixed
+      light
       app
     >
       <v-list>
@@ -16,10 +17,10 @@
           exact
         >
           <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
+            <span>{{i+1}}</span>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
+              <v-list-tile-title v-text="item.title"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -44,7 +45,9 @@
       >
         <v-icon>remove</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <nuxt-link to="/">
+        <v-toolbar-title v-text="title"></v-toolbar-title>
+      </nuxt-link>
       <v-spacer></v-spacer>
       <v-btn
         icon
@@ -87,13 +90,16 @@
         drawer: true,
         fixed: false,
         items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
+          { title: 'Liquid Democracy', to: '/liquid-democracy' },
+          { title: 'Instant Money', to: '/instant-money' },
+          { title: 'Democratized VC', to: '/democratized-vc' },
+          { title: 'Supply Chain Transparency', to: '/supply-chain-transparency' },
+          { title: 'Historical Records', to: '/historical-records' }
         ],
         miniVariant: false,
         right: true,
         rightDrawer: false,
-        title: 'Vuetify.js'
+        title: 'Crypto Catalyst'
       }
     }
   }
