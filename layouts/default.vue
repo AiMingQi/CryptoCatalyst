@@ -20,16 +20,10 @@
             v-list-tile-action
               span {{i+1}}
             v-list-tile-title(v-text="item.title")
-    v-toolbar(fixed app :clipped-left="clipped")
+    v-toolbar.py-2(fixed app :clipped-left="clipped")
       v-toolbar-side-icon(@click="drawer = !drawer")
-      nuxt-link(to="/" class="white--text" style="text-decoration: none;")
-        v-toolbar-title(v-text="title")
+      v-img.my-3(src="/banner-logo.png" max-height="80px" contain position="left")
       v-spacer
-      v-btn(
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      )
-        v-icon menu
     v-content
       v-container
         nuxt
