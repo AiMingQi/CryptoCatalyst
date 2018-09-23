@@ -22,18 +22,6 @@
             v-list-tile-title(v-text="item.title")
     v-toolbar(fixed app :clipped-left="clipped")
       v-toolbar-side-icon(@click="drawer = !drawer")
-      v-btn(
-      )
-        v-icon(v-html="miniVariant ? 'chevron_right' : 'chevron_left'")
-      v-btn(
-      )
-        v-icon web
-      </v-btn>
-      v-btn(
-        icon
-        @click.stop="fixed = !fixed"
-      )
-        v-icon remove
       nuxt-link(to="/" class="white--text" style="text-decoration: none;")
         v-toolbar-title(v-text="title")
       v-spacer
@@ -45,19 +33,8 @@
     v-content
       v-container
         nuxt
-    v-navigation-drawer(
-      temporary
-      :right="right"
-      v-model="rightDrawer"
-      fixed
-    )
-      v-list
-        v-list-tile(@click.native="right = !right")
-          v-list-tile-action
-            v-icon(light) compare_arrows
-          v-list-tile-title Switch drawer (click me)
     v-footer(:fixed="fixed" app)
-      span &copy; 2018 Crypto Catalyst
+      span.ml-5 &copy; 2018 Crypto Catalyst
 </template>
 
 <script>
