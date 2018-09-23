@@ -7,17 +7,19 @@
       fixed
       light
       app)
-      h2 Top 5 Ways Crypto will Change the World
+      v-card.pa-3(dark)
+        h2 Top 5 Ways Crypto will Change the World
       v-list
         v-list-tile(
           router
           :to="item.to"
           :key="i"
           v-for="(item, i) in items"
-          exact)
-          v-list-tile-action
-            span {{i+1}}
-          v-list-tile-title(v-text="item.title")
+          exact
+          )
+            v-list-tile-action
+              span {{i+1}}
+            v-list-tile-title(v-text="item.title")
     v-toolbar(fixed app :clipped-left="clipped")
       v-toolbar-side-icon(@click="drawer = !drawer")
       v-btn(
@@ -42,6 +44,7 @@
         v-icon menu
     v-content
       v-container
+        nuxt
     v-navigation-drawer(
       temporary
       :right="right"
