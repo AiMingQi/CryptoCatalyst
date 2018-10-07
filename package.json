@@ -11,6 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "firebase": "^5.5.3",
     "nuxt": "^1.4.2",
     "vuefire": "^1.4.5",
     "vuetify": "^1.2.4"
