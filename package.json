@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "nuxt": "^1.4.2",
+    "vuefire": "^1.4.5",
     "vuetify": "^1.2.4"
   },
   "devDependencies": {
