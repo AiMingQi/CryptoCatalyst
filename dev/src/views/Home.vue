@@ -1,18 +1,7 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+  v-layout(column justify-center align-center)
+    v-flex(xs12 sm8 md6)
+      div.text-xs-center
+        v-img(src="@/main-logo.png" alt="Crypto Catalyst Logo" class="mb-5")
+        h1 Where the Reaction is Taking Place
 </template>
-
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
-</script>

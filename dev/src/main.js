@@ -5,6 +5,8 @@ import router from './router'
 import store from './store'
 
 import 'vuetify/dist/vuetify.min.css' 
+// index.js or main.js
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.use(Vuetify)
 
