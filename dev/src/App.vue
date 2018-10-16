@@ -66,11 +66,16 @@
 </style>
 
 <style>
-html, body, p, h1, h2, h3, h4, h5 {
-  font-family: Lato;
-}
+
 p {
   font-size: 16px;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
 }
 </style>
 
