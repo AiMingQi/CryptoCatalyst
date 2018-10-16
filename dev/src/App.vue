@@ -55,3 +55,22 @@
     }
   }
 </script>
+<style scoped>
+
+
+
+.banner {
+  background: url('/banner-bg.png');
+  background-repeat: repeat-x;
+  }
+</style>
+
+<style>
+html, body, p, h1, h2, h3, h4, h5 {
+  font-family: Lato;
+}
+p {
+  font-size: 16px;
+}
+</style>
+

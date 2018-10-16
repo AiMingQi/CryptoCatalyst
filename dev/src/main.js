@@ -8,7 +8,12 @@ import 'vuetify/dist/vuetify.min.css'
 // index.js or main.js
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  theme: {
+    primary: '#033E22',
+    secondary: '#033E22'
+  }
+})
 
 Vue.config.productionTip = false
 
