@@ -13,7 +13,7 @@
   "dependencies": {
     "firebase": "^5.5.3",
     "nuxt": "^1.4.2",
-    "vuefire": "^1.4.5",
+    "vuefire": "^2.0.0-alpha.15",
     "vuetify": "^1.2.4"
   },
   "devDependencies": {
