@@ -38,32 +38,35 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        clipped: false,
-        drawer: true,
-        fixed: false,
-        items: [
-          { title: 'Liquid Democracy', to: '/liquid-democracy' },
-          { title: 'Instant Money', to: '/instant-money' },
-          { title: 'Democratized VC', to: '/democratized-vc' },
-          { title: 'Supply Chain Transparency', to: '/supply-chain-transparency' },
-          { title: 'Historical Records', to: '/historical-records' }
-        ],
-        miniVariant: false,
-        right: true,
-        rightDrawer: false,
-        title: 'Crypto Catalyst'
-      }
-    },
-    methods: {
-      signInWithGoogle() {
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithPopup(provider);
-      }
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+export default {
+  data () {
+    return {
+      clipped: false,
+      drawer: true,
+      fixed: false,
+      items: [
+        { title: 'Liquid Democracy', to: '/liquid-democracy' },
+        { title: 'Instant Money', to: '/instant-money' },
+        { title: 'Democratized VC', to: '/democratized-vc' },
+        { title: 'Supply Chain Transparency', to: '/supply-chain-transparency' },
+        { title: 'Historical Records', to: '/historical-records' }
+      ],
+      miniVariant: false,
+      right: true,
+      rightDrawer: false,
+      title: 'Crypto Catalyst'
+    }
+  },
+  methods: {
+    signInWithGoogle() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
     }
   }
+}
 </script>
 <style scoped>
 

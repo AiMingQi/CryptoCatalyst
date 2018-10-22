@@ -13,9 +13,11 @@
           h1 {{evidence.newEvidence.evidence_title}}
         v-card-text 
           p {{evidence.newEvidence.evidence_body}}
+          p Link to Proof:
           a(
+            target="_blank"
             :href="evidence.newEvidence.evidence_link"
-          ) {{evidence.newEvidence.evidence_link}}
+          )  {{evidence.newEvidence.evidence_link}}
         v-divider
         v-card-title
           h4 Discovered by {{evidence.author_name}} on {{evidence.createdOn.seconds | moment("dddd, MMMM Do YYYY")}}

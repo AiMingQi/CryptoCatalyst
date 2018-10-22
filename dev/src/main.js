@@ -10,7 +10,7 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.use(Vuetify, {
   theme: {
-    primary: '#033E22',
+    primary: '#FF9F00',
     secondary: '#033E22'
   }
 })

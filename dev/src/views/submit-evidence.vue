@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-card
+  v-card.pa-3
     v-form(
       ref="form"
       v-model="valid"
@@ -44,17 +44,17 @@ export default {
     evidence_title: '',
     evidence_titleRules: [
       v => !!v || 'Title is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+      v => (v && v.length <= 32) || 'Title must be less than 32 characters'
     ],
     evidence_body: '',
     evidence_bodyRules: [
       v => !!v || 'Description is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+      v => (v && v.length <= 280) || 'Description must be less than 280 characters'
     ],
     evidence_link: '',
     evidence_linkRules: [
       v => !!v || 'Link to Proof is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+      v => (v && v.length <= 100) || 'Link must be less than 100 characters'
     ]
   }),
   methods: {
@@ -64,6 +64,7 @@ export default {
         store.writeEvidence(this.newEvidence);
         console.log('trying to send')
         console.log(this.newEvidence)
+        this.$refs.form.reset()
       }
     },
     clear () {
