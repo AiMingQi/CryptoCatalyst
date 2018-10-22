@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import index from './views/index.vue'
+import allEvidence from './views/all-evidence.vue'
 
 Vue.use(Router)
 
@@ -43,7 +44,7 @@ export default new Router({
     {
       path: '/all-evidence',
       name: 'allevidence',
-      component: () => import(/* webpackChunkName: "supplychaintransparency" */ './views/all-evidence.vue')
+      component: allEvidence
     },
     {
       path: '/submit-evidence',
