@@ -61,14 +61,24 @@ export default {
     submitEvidence () {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
-        store.writeEvidence(this.evidence_body);
+        store.writeEvidence(this.newEvidence);
         console.log('trying to send')
+        console.log(this.newEvidence)
       }
     },
     clear () {
       this.$refs.form.reset()
     }
+  },
+  computed: {
+  newEvidence () {
+    return {
+      evidence_title: this.evidence_title,
+      evidence_body: this.evidence_body,
+      evidence_link: this.evidence_link
+    }
   }
+}
 }
 </script>
 

@@ -26,13 +26,13 @@ const evidencesCollection = firebase.firestore()
 export const store = {
   evidenceInFeed: null,
   currentUser: null,
-  writeEvidence: (message) => {
+  writeEvidence: (newEvidence) => {
     const dt = {
       createdOn: new Date(),
       author: store.currentUser.uid,
       author_name: store.currentUser.displayName,
       author_image: store.currentUser.photoURL,
-      message
+      newEvidence
     };
     return evidencesCollection.add(dt).catch(e => console.error('error inserting', dt, e));
   }

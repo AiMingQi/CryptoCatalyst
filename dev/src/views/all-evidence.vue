@@ -10,9 +10,12 @@
         :key="evidence.id"
         )
         v-card-title 
-          h1 Evidence Title
+          h1 {{evidence.newEvidence.evidence_title}}
         v-card-text 
-          p {{evidence.message}}
+          p {{evidence.newEvidence.evidence_body}}
+          a(
+            :href="evidence.newEvidence.evidence_link"
+          ) {{evidence.newEvidence.evidence_link}}
         v-divider
         v-card-title
           h4 Discovered by {{evidence.author_name}} on {{evidence.createdOn.seconds | moment("dddd, MMMM Do YYYY")}}
