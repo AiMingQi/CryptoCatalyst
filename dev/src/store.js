@@ -18,28 +18,14 @@ const firestore = firebase.firestore();
   firestore.settings(settings);
 
 // a reference to the Balls collection
-const ballsCollection = firebase.firestore()
-  .collection('balls');
-// a reference to the Balls collection
 const evidencesCollection = firebase.firestore()
   .collection('evidences');
 
 // the shared state object that any vue component
 // can get access to
 export const store = {
-  ballsInFeed: null,
   evidenceInFeed: null,
   currentUser: null,
-  writeBall: (message) => {
-    const dt = {
-      createdOn: new Date(),
-      author: store.currentUser.uid,
-      author_name: store.currentUser.displayName,
-      author_image: store.currentUser.photoURL,
-      message
-    };
-    return ballsCollection.add(dt).catch(e => console.error('error inserting', dt, e));
-  },
   writeEvidence: (message) => {
     const dt = {
       createdOn: new Date(),
@@ -56,19 +42,6 @@ export const store = {
 // in the underlying firestore collection changes
 // It will get passed an array of references to 
 // the documents that match your query
-ballsCollection
-  .orderBy('createdOn', 'desc')
-  .limit(5)
-  .onSnapshot((ballsRef) => {
-    const balls = [];
-    ballsRef.forEach((doc) => {
-      const ball = doc.data();
-      ball.id = doc.id;
-      balls.push(ball);
-    });
-    console.log('Received Balls feed:', balls);
-    store.ballsInFeed = balls;
-  });
 
 evidencesCollection
   .orderBy('createdOn', 'desc')
