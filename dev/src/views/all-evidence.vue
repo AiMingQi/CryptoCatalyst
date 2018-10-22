@@ -5,7 +5,10 @@
         v-card-title
           h1 Evidence of the Reaction
     v-flex(xs12)
-      v-card.my-3(v-for="evidence in currentEvidences")
+      v-card.my-3(
+        v-for="evidence in currentEvidences"
+        :key="evidence.id"
+        )
         v-card-title 
           h1 Evidence Title
         v-card-text 
@@ -37,18 +40,18 @@ import 'firebase/auth';
 export default {
   data () {
     return {
-      message: null,
-      currentEvidences: []
+      message: null
     }
-  },
-  mounted () {
-    this.currentEvidences = store.evidenceInFeed
-    console.log(this.currentEvidences)
   },
   methods: {
     formPost() {
       store.writeEvidence(this.message);
       console.log('trying to send')
+    }
+  },
+  computed: {
+    currentEvidences () {
+      return store.evidenceInFeed
     }
   }
 }
