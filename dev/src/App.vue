@@ -24,6 +24,8 @@
       v-toolbar-side-icon(@click="drawer = !drawer")
       v-img(src="/banner-logo.png" max-height="100px" height="100px" contain position="left")
       v-spacer
+      h2 Where the Reaction is Taking Place
+      v-spacer
       v-btn(to="/" icon flat)
         v-icon home
     v-content
@@ -31,6 +33,8 @@
         router-view
     v-footer(:fixed="fixed" app)
       span.ml-5 &copy; 2018 Crypto Catalyst
+      v-spacer
+      v-btn(@click.prevent="signInWithGoogle") Login
 </template>
 
 <script>
@@ -51,6 +55,12 @@
         right: true,
         rightDrawer: false,
         title: 'Crypto Catalyst'
+      }
+    },
+    methods: {
+      signInWithGoogle() {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider);
       }
     }
   }
