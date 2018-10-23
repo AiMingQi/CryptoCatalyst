@@ -44,7 +44,7 @@ export default new Router({
     {
       path: '/all-evidence',
       name: 'allevidence',
-      component: allEvidence
+      component: () => import(/* webpackChunkName: "supplychaintransparency" */ './views/all-evidence.vue')
     },
     {
       path: '/submit-evidence',

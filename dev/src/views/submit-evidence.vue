@@ -61,7 +61,7 @@ export default {
     ],
     types: [
       'Hard Evidence',
-      'Userful Definition or Clarity',
+      'Useful Definition or Clarity Point',
       'Future Potential - Highly Feesible'
     ],
     evidence_way: '',

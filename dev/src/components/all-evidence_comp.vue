@@ -7,7 +7,7 @@
           v-btn(to="/submit-evidence" ) Submit
     v-flex(xs12)
       v-card.my-3(
-        v-for="evidence in currentEvidences"
+        v-for="evidence in store.evidenceInFeed"
         :key="evidence.id"
         )
         v-card-title 
@@ -44,25 +44,12 @@
 
 <script>
 import { store } from '../store';
-import firebase from 'firebase/app';
-import 'firebase/auth';
 
 export default {
-  data () {
+  data() {
     return {
-      message: null
-    }
+      store
+    };
   },
-  methods: {
-    formPost() {
-      store.writeEvidence(this.message);
-      console.log('trying to send')
-    }
-  },
-  computed: {
-    currentEvidences () {
-      return store.evidenceInFeed
-    }
-  }
 }
 </script>
