@@ -15,7 +15,9 @@
           v-spacer
           h2.ml-5  {{evidence.newEvidence.evidence_way}}
         v-card-text 
-          p {{evidence.newEvidence.evidence_body}}
+          h3 Proof Type: {{evidence.newEvidence.evidence_type}}
+          br
+          p <strong>Excerpt or Description: </strong>{{evidence.newEvidence.evidence_body}}
           p Link to Proof:
           a(
             target="_blank"

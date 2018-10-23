@@ -11,6 +11,12 @@
         v-model="evidence_way"
         required
       )
+      v-select(
+        :items="types"
+        label="Type of Evidence"
+        v-model="evidence_type"
+        required
+      )
       v-text-field(
         v-model="evidence_title"
         :rules="evidence_titleRules"
@@ -53,6 +59,11 @@ export default {
       'Supply Chain Transparency',
       'Historical Records'
     ],
+    types: [
+      'Hard Evidence',
+      'Userful Definition or Clarity',
+      'Future Potential - Highly Feesible'
+    ],
     evidence_way: '',
     valid: true,
     evidence_title: '',
@@ -63,7 +74,7 @@ export default {
     evidence_body: '',
     evidence_bodyRules: [
       v => !!v || 'Description is required',
-      v => (v && v.length <= 280) || 'Description must be less than 280 characters'
+      v => (v && v.length <= 480) || 'Description must be less than 480 characters'
     ],
     evidence_link: '',
     evidence_linkRules: [
@@ -92,7 +103,8 @@ export default {
       evidence_title: this.evidence_title,
       evidence_body: this.evidence_body,
       evidence_link: this.evidence_link,
-      evidence_way: this.evidence_way
+      evidence_way: this.evidence_way,
+      evidence_type: this.evidence_type
     }
   }
 }

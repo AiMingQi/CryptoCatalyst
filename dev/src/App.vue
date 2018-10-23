@@ -22,9 +22,9 @@
             v-list-tile-title(v-text="item.title")
     v-toolbar.ma-1.banner(fixed app :clipped-left="clipped" height="100px")
       v-toolbar-side-icon(@click="drawer = !drawer")
-      v-img(src="/banner-logo.png" max-height="100px" height="100px" contain position="left")
+      v-img(src="/banner-logo.png" max-height="100px" height="100px" min-height="100px" contain position="left")
       v-spacer
-      h2 Where the Reaction is Taking Place
+      h3 Where the Reaction is Taking Place
       v-spacer
       v-btn(to="/" icon flat)
         v-icon home
@@ -35,7 +35,7 @@
       span.ml-5 &copy; 2018 Crypto Catalyst 
       v-spacer
       v-btn(@click.prevent="signInWithGoogle") Login
-      v-btn(to="/submit-evidence") Submit
+      
 
 </template>
 
