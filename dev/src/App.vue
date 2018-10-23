@@ -33,8 +33,9 @@
         router-view
     v-footer(:fixed="fixed" app)
       span.ml-5 &copy; 2018 Crypto Catalyst 
+      //- span.ml-5 {{store.currentUser.displayName}}
       v-spacer
-      v-btn(@click.prevent="signInWithGoogle") Login
+      v-btn(@click.prevent="signInWithGoogle" v-if="store.currentUser == null") Login
       
 
 </template>
@@ -47,6 +48,7 @@ import 'firebase/auth';
 export default {
   data () {
     return {
+      store,
       clipped: false,
       drawer: true,
       fixed: false,

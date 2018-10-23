@@ -4,7 +4,7 @@
       v-card
         v-card-title
           h1 Evidence of the Reaction
-          v-btn(to="/submit-evidence" ) Submit
+          v-btn(to="/submit-evidence" v-if="store.currentUser !== null") Submit
     v-flex(xs12)
       v-card.my-3(
         v-for="evidence in store.evidenceInFeed"
