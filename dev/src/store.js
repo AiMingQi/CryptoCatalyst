@@ -45,7 +45,7 @@ export const store = {
 
 evidencesCollection
   .orderBy('createdOn', 'desc')
-  .limit(5)
+  .limit(20)
   .onSnapshot((evidencesRef) => {
     const evidences = [];
     evidencesRef.forEach((doc) => {

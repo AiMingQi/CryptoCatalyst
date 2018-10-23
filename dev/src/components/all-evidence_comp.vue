@@ -11,7 +11,7 @@
         :key="evidence.id"
         )
         v-card-title 
-          h1 {{evidence.newEvidence.evidence_title}}
+          h1.primary--text {{evidence.newEvidence.evidence_title}}
           v-spacer
           h2.ml-5  {{evidence.newEvidence.evidence_way}}
         v-card-text 

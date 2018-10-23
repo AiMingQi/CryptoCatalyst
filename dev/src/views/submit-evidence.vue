@@ -74,7 +74,7 @@ export default {
     evidence_body: '',
     evidence_bodyRules: [
       v => !!v || 'Description is required',
-      v => (v && v.length <= 480) || 'Description must be less than 480 characters'
+      v => (v && v.length <= 600) || 'Description must be less than 600 characters'
     ],
     evidence_link: '',
     evidence_linkRules: [
