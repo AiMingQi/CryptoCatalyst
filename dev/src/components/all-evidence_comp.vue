@@ -11,15 +11,16 @@
         :key="evidence.id"
         )
         v-card-title 
-          h1.primary--text {{evidence.newEvidence.evidence_title}}
-          v-spacer
-          h2.ml-5  {{evidence.newEvidence.evidence_way}}
+          h2 {{evidence.newEvidence.evidence_way}}
         v-card-text 
-          h3 Proof Type: {{evidence.newEvidence.evidence_type}}
+          h1.primary--text {{evidence.newEvidence.evidence_title}}
+          h2.primary--text Proof Type: 
+          h3 {{evidence.newEvidence.evidence_type}}
           br
-          p <strong>Excerpt or Description: </strong> "{{evidence.newEvidence.evidence_body}}"
-          p Link to Proof:
-          a(
+          h2.primary--text Excerpt or Description: 
+          p "{{evidence.newEvidence.evidence_body}}"
+          h2.primary--text Link to Proof:
+          a.white--text(
             target="_blank"
             :href="evidence.newEvidence.evidence_link"
             rel="noopener"
@@ -55,3 +56,8 @@ export default {
   },
 }
 </script>
+
+<style>
+a { text-decoration: none;}
+</style>
+

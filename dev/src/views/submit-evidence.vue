@@ -26,7 +26,7 @@
       v-text-field(
         v-model="evidence_body"
         :rules="evidence_bodyRules"
-        label="Description of Evidence"
+        label="Excerpt of Evidence"
         required
       )
       v-text-field(
