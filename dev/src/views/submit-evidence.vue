@@ -79,6 +79,7 @@ export default {
         console.log('trying to send')
         console.log(this.newEvidence)
         this.$refs.form.reset()
+        this.$router.push('/all-evidence')
       }
     },
     clear () {
