@@ -69,7 +69,7 @@ export default {
     evidence_title: '',
     evidence_titleRules: [
       v => !!v || 'Title is required',
-      v => (v && v.length <= 64) || 'Title must be less than 64 characters'
+      v => (v && v.length <= 100) || 'Title must be less than 100 characters'
     ],
     evidence_body: '',
     evidence_bodyRules: [

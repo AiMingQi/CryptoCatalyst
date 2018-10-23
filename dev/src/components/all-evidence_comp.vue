@@ -17,7 +17,7 @@
         v-card-text 
           h3 Proof Type: {{evidence.newEvidence.evidence_type}}
           br
-          p <strong>Excerpt or Description: </strong>{{evidence.newEvidence.evidence_body}}
+          p <strong>Excerpt or Description: </strong> "{{evidence.newEvidence.evidence_body}}"
           p Link to Proof:
           a(
             target="_blank"
