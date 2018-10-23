@@ -22,6 +22,8 @@
           a(
             target="_blank"
             :href="evidence.newEvidence.evidence_link"
+            rel="noopener"
+            :alt="evidence.newEvidence.evidence_title"
           )  {{evidence.newEvidence.evidence_link}}
         v-divider
         v-card-title
