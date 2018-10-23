@@ -32,12 +32,15 @@
       v-container
         router-view
     v-footer(:fixed="fixed" app)
-      span.ml-5 &copy; 2018 Crypto Catalyst
+      span.ml-5 &copy; 2018 Crypto Catalyst 
       v-spacer
       v-btn(@click.prevent="signInWithGoogle") Login
+      v-btn(to="/submit-evidence") Submit
+
 </template>
 
 <script>
+import { store } from '@/store';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 

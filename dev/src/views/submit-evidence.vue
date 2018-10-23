@@ -5,6 +5,12 @@
       v-model="valid"
       lazy-validation
     )
+      v-select(
+        :items="ways"
+        label="5 Ways"
+        v-model="evidence_way"
+        required
+      )
       v-text-field(
         v-model="evidence_title"
         :rules="evidence_titleRules"
@@ -40,11 +46,19 @@ import 'firebase/auth';
 
 export default {
   data: () => ({
+    ways: [
+      'Liquid Democracy',
+      'Instant Money',
+      'Democratized VC',
+      'Supply Chain Transparency',
+      'Historical Records'
+    ],
+    evidence_way: '',
     valid: true,
     evidence_title: '',
     evidence_titleRules: [
       v => !!v || 'Title is required',
-      v => (v && v.length <= 32) || 'Title must be less than 32 characters'
+      v => (v && v.length <= 64) || 'Title must be less than 64 characters'
     ],
     evidence_body: '',
     evidence_bodyRules: [
@@ -54,7 +68,7 @@ export default {
     evidence_link: '',
     evidence_linkRules: [
       v => !!v || 'Link to Proof is required',
-      v => (v && v.length <= 100) || 'Link must be less than 100 characters'
+      v => (v && v.length <= 180) || 'Link must be less than 180 characters'
     ]
   }),
   methods: {
@@ -76,7 +90,8 @@ export default {
     return {
       evidence_title: this.evidence_title,
       evidence_body: this.evidence_body,
-      evidence_link: this.evidence_link
+      evidence_link: this.evidence_link,
+      evidence_way: this.evidence_way
     }
   }
 }
