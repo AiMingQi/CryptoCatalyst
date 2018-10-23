@@ -18,8 +18,9 @@
           exact
           )
             v-list-tile-action
-              span {{i+1}}
-            v-list-tile-title(v-text="item.title")
+              strong {{i+1}}
+            v-list-tile-title.index_title(v-text="item.title")
+      v-img.ml-2(src="/banner-logo.png")
     v-toolbar.ma-1.banner(fixed app :clipped-left="clipped" height="100px")
       v-toolbar-side-icon(@click="drawer = !drawer")
       v-img(src="/banner-logo.png" max-height="100px" height="100px" min-height="100px" contain position="left")
@@ -74,8 +75,7 @@ export default {
 }
 </script>
 <style scoped>
-
-
+.index_title { font-size: 1.2em; }
 
 .banner {
   background: url('/banner-bg.png');
