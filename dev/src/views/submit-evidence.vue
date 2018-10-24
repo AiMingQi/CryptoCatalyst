@@ -35,6 +35,12 @@
         label="Link to Proof"
         required
       )
+      p If you would like to post a link or crypto wallet address for your hard work.
+      v-text-field(
+        v-model="evidence_tip"
+        :rules="evidence_tipRules"
+        label="Link to Tip"
+      )
       v-btn(
         :disabled="!valid"
         @click="submitEvidence"
@@ -80,6 +86,10 @@ export default {
     evidence_linkRules: [
       v => !!v || 'Link to Proof is required',
       v => (v && v.length <= 180) || 'Link must be less than 180 characters'
+    ],
+    evidence_tip: '',
+    evidence_tipRules: [
+      v => (v && v.length <= 300) || 'Link must be less than 300 characters'
     ]
   }),
   methods: {
@@ -104,7 +114,8 @@ export default {
       evidence_body: this.evidence_body,
       evidence_link: this.evidence_link,
       evidence_way: this.evidence_way,
-      evidence_type: this.evidence_type
+      evidence_type: this.evidence_type,
+      evidence_tip: this.evidence_tip
     }
   }
 }

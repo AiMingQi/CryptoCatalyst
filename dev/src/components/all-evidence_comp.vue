@@ -25,7 +25,7 @@
             :href="evidence.newEvidence.evidence_link"
             rel="noopener"
             :alt="evidence.newEvidence.evidence_title"
-          )  {{evidence.newEvidence.evidence_link}}
+          )  {{evidence.newEvidence.evidence_link.slice(0,48)}} . . .
         v-divider
         v-card-title
           v-avatar.mr-3(
@@ -36,6 +36,8 @@
               :src="evidence.author_image"
             )
           h4 Discovered by {{evidence.author_name}} on {{evidence.createdOn.seconds | moment("dddd, MMMM Do YYYY")}}
+          v-spacer
+          h4 Tip the Discoverer - {{evidence.newEvidence.evidence_tip}}
         v-divider
         v-card-actions 
           v-btn(color="secondary") Totally True
