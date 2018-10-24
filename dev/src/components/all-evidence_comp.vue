@@ -39,18 +39,18 @@
           v-spacer
           h4 Tip the Discoverer - {{evidence.newEvidence.evidence_tip}}
         v-divider
-        v-card-actions 
-          v-btn(color="secondary") Totally True
-          v-spacer
-          p -- Validate --
-          v-spacer
-          v-btn Fake News
+        truth-detector 
+          
 </template>
 
 <script>
 import { store } from '../store';
+import truthDetector from '../components/truth-detector.vue'
 
 export default {
+  components: {
+    truthDetector
+  },
   data() {
     return {
       store
