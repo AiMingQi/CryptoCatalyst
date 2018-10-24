@@ -1,17 +1,31 @@
 <template lang="pug">
-  v-card(light)
+  v-card
     v-card-title
-      v-btn(color="secondary") Totally True
+      V-icon(v-show="totallyTrue === true") check
+      v-btn(color="secondary" @click.prevent="setTotallyTrue") Totally True
       v-spacer
       p -- Validate --
       v-spacer
-      v-btn Fake News
+      V-icon(v-show="totallyTrue === false") check
+      v-btn(color="black" @click.prevent="setFakeNews") Fake News
 </template>
 
 <script>
 export default {
   data () {
-    return {}
+    return {
+      totallyTrue: null
+    }
+  },
+  methods: {
+    setTotallyTrue () {
+      this.totallyTrue = true
+      console.log('true')
+    },
+    setFakeNews () {
+      this.totallyTrue = false
+      console.log('fake')
+    }
   }
 }
 </script>
