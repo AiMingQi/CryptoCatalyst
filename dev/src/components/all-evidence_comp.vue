@@ -11,21 +11,22 @@
         :key="evidence.id"
         )
         v-card-title 
-          h2 {{evidence.newEvidence.evidence_way}}
+          h1.primary--text {{evidence.newEvidence.evidence_title}} <br>
         v-card-text 
-          h1.primary--text {{evidence.newEvidence.evidence_title}}
           h2.primary--text Proof Type: 
+          h2 {{evidence.newEvidence.evidence_way}}
           h3 {{evidence.newEvidence.evidence_type}}
           br
           h2.primary--text Excerpt or Description: 
           p "{{evidence.newEvidence.evidence_body}}"
           h2.primary--text Link to Proof:
-          a.white--text(
+          v-btn(
+            block
             target="_blank"
             :href="evidence.newEvidence.evidence_link"
             rel="noopener"
             :alt="evidence.newEvidence.evidence_title"
-          )  {{evidence.newEvidence.evidence_link.slice(0,48)}} . . .
+            ) Visit the Evidence
         v-divider
         v-card-title
           v-avatar.mr-3(
