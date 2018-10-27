@@ -15,40 +15,17 @@
                             li Project Level
                             li Organization Level
                             li Government Level
-                v-card.mt-3
-                    v-card-title
-                        p The Evidence
-                        v-spacer
-                        v-text-field(
-                            v-model="search"
-                            append-icon="search"
-                            label="Search"
-                            single-line
-                            hide-details
-                        )
-                    v-card-text
-                        v-data-table(
-                            :headers="headers"
-                            :items="evidence"
-                            :search="search"
-                        )
-                            template(slot="items" slot-scope="props")
-                                td.py-2 
-                                    h4 {{ props.item.newEvidence.evidence_title }}
-                                td {{ props.item.newEvidence.evidence_type }}
-                                td {{ props.item.newEvidence.evidence_way }}
-                                td {{ props.item.newEvidence.evidence_body }}
-                                td 
-                                    v-btn(:href="props.item.newEvidence.evidence_link" target="_blank" rel="noopener") See for Yourself
-                                td 
-                                    v-img(:src="props.item.author_image" height="40px" width="40px")
-                            v-alert(slot="no-results" :value="true" color="error" icon="warning") Your search for "{{ search }}" found no results.
+                evidence-table(currentWay="Liquid Democracy")
 
 </template>
 
 <script>
 import { store } from '../store';
+import evidenceTable from '@/components/evidence-table'
 export default {
+    components: {
+        evidenceTable
+    },
     data () {
         return {
             store,
