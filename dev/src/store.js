@@ -17,14 +17,18 @@ const firestore = firebase.firestore();
   const settings = {/* your settings... */ timestampsInSnapshots: true};
   firestore.settings(settings);
 
-// a reference to the Balls collection
+// a reference to the Evidences collection
 const evidencesCollection = firebase.firestore()
   .collection('evidences');
+// a reference to the Evidences collection
+const votesCollection = firebase.firestore()
+  .collection('votes');
 
 // the shared state object that any vue component
 // can get access to
 export const store = {
   evidenceInFeed: null,
+  votesInFeed: null,
   currentUser: null,
   writeEvidence: (newEvidence) => {
     const dt = {
@@ -36,6 +40,22 @@ export const store = {
     };
     return evidencesCollection.add(dt).catch(e => console.error('error inserting', dt, e));
   }
+  // voteOnEvidence: (newVote) => {
+  //   const dt = {
+  //     createdOn: new Date(),
+  //     author: store.currentUser.uid,
+  //     newVote
+  //   };
+  //   return votesCollection.add(dt).catch(e => console.error('error inserting', dt, e));
+  // },
+  // changeVoteOnEvidence: (newVote) => {
+  //   const dt = {
+  //     author: store.currentUser.uid,
+  //     newVote
+  //   };
+  //   const id = newVote.evidence_id
+  //   return votesCollection.doc(id).update(dt).catch(e => console.error('error updating', dt, e));
+  // }
 };
 
 // onSnapshot is executed every time the data
@@ -56,6 +76,20 @@ evidencesCollection
     console.log('Received Evidence feed:', evidences);
     store.evidenceInFeed = evidences;
   });
+
+// votesCollection
+//   .orderBy('createdOn', 'desc')
+//   .limit(20)
+//   .onSnapshot((votesRef) => {
+//     const votes = [];
+//     votesRef.forEach((doc) => {
+//       const vote = doc.data();
+//       vote.id = doc.id;
+//       votes.push(vote);
+//     });
+//     console.log('Received Votes feed:', votes);
+//     store.votesInFeed = votes;
+//   });
 
 // When a user logs in or out, save that in the store
 firebase.auth().onAuthStateChanged((user) => {

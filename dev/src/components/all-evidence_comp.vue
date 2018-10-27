@@ -26,6 +26,7 @@
             :href="evidence.newEvidence.evidence_link"
             rel="noopener"
             :alt="evidence.newEvidence.evidence_title"
+            color="secondary"
             ) Visit the Evidence
         v-divider
         v-card-title
@@ -37,10 +38,10 @@
               :src="evidence.author_image"
             )
           h4 Discovered by {{evidence.author_name}} on {{evidence.createdOn.seconds | moment("dddd, MMMM Do YYYY")}}
-          v-spacer
-          h4 Tip the Discoverer - {{evidence.newEvidence.evidence_tip}}
+          //- v-spacer
+          //- h4 Tip the Discoverer - {{evidence.newEvidence.evidence_tip}}
         v-divider
-        truth-detector 
+        //- truth-detector(:evidence_id="evidence.id") 
           
 </template>
 
