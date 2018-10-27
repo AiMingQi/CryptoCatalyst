@@ -1,7 +1,7 @@
 <template lang="pug">
     v-container(fluid)
         v-layout(row wrap)
-            v-flex
+            v-flex(xs12)
                 v-card
                     v-card-title
                         h1 Liquid Democracy
@@ -20,37 +20,10 @@
 </template>
 
 <script>
-import { store } from '../store';
 import evidenceTable from '@/components/evidence-table'
 export default {
     components: {
         evidenceTable
-    },
-    data () {
-        return {
-            store,
-            search: '',
-            headers: [
-            {
-                text: 'Title',
-                align: 'left',
-                sortable: false,
-                value: 'props.item.newEvidence.evidence_title'
-            },
-            { text: 'Proof Type', value: 'props.item.newEvidence.evidence_type' },
-            { text: 'Proof Way', value: 'props.item.newEvidence.evidence_way' },
-            { text: 'Excerpt', value: 'props.item.newEvidence.evidence_body' },
-            { text: 'Link', value: 'props.item.newEvidence.evidence_link' },
-            { text: 'Finder', value: 'props.item.author_image' }
-        ]
-        }
-    },
-    computed: {
-        evidence () {
-            return this.store.evidenceInFeed.filter(function (evidence) {
-                return evidence.newEvidence.evidence_way === "Liquid Democracy"
-            })
-        }
     }
 }
 </script>

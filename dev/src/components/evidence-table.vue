@@ -7,7 +7,6 @@
           v-model="search"
           append-icon="search"
           label="Search"
-          single-line
           hide-details
       )
     v-card-text
