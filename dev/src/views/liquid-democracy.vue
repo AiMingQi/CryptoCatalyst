@@ -34,7 +34,7 @@
                         )
                             template(slot="items" slot-scope="props")
                                 td.py-2 
-                                    h3 {{ props.item.newEvidence.evidence_title }}
+                                    h4 {{ props.item.newEvidence.evidence_title }}
                                 td {{ props.item.newEvidence.evidence_type }}
                                 td {{ props.item.newEvidence.evidence_way }}
                                 td {{ props.item.newEvidence.evidence_body }}

@@ -38,11 +38,6 @@
               :src="evidence.author_image"
             )
           h4 Discovered by {{evidence.author_name}} on {{evidence.createdOn.seconds | moment("dddd, MMMM Do YYYY")}}
-          //- v-spacer
-          //- h4 Tip the Discoverer - {{evidence.newEvidence.evidence_tip}}
-        v-divider
-        //- truth-detector(:evidence_id="evidence.id") 
-          
 </template>
 
 <script>
@@ -50,9 +45,6 @@ import { store } from '../store';
 import truthDetector from '../components/truth-detector.vue'
 
 export default {
-  components: {
-    truthDetector
-  },
   data() {
     return {
       store
