@@ -42,7 +42,6 @@
 
 <script>
 import { store } from '../store';
-import truthDetector from '../components/truth-detector.vue'
 
 export default {
   data() {
