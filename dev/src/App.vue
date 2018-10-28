@@ -24,7 +24,6 @@
     v-toolbar.ma-1.banner(fixed app :clipped-left="clipped" height="100px")
       v-toolbar-side-icon(@click="drawer = !drawer")
       v-img.hidden-sm-and-down(src="/banner-logo.png" max-height="100px" height="100px" min-height="100px" contain position="left")
-      v-spacer
       h3 Where the Reaction is Taking Place
       v-spacer
       v-btn(to="/" icon flat)
