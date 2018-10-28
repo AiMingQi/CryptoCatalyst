@@ -23,13 +23,13 @@
           td {{ props.item.newEvidence.evidence_type }}
           td
             v-btn(@click.stop="$set(dialogNote, props.item.id, true)" color="secondary" dark) Read Excerpt
-          v-dialog(v-model="dialogNote[props.item.id]" max-width="600")
-            v-card
-              v-card-title.headline.primary--text {{ props.item.newEvidence.evidence_title }}
-              v-card-text {{ props.item.newEvidence.evidence_body }}
-              v-card-actions
-                v-spacer
-                v-btn(color="green darken-1" flat @click.stop="$set(dialogNote, props.item.id, false)") Close
+            v-dialog(v-model="dialogNote[props.item.id]" max-width="600")
+              v-card
+                v-card-title.headline.primary--text {{ props.item.newEvidence.evidence_title }}
+                v-card-text {{ props.item.newEvidence.evidence_body }}
+                v-card-actions
+                  v-spacer
+                  v-btn(color="green darken-1" flat @click.stop="$set(dialogNote, props.item.id, false)") Close
           td 
             v-btn(:href="props.item.newEvidence.evidence_link" target="_blank" rel="noopener") See for Yourself
           td 
