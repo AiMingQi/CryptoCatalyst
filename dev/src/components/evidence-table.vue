@@ -37,17 +37,16 @@
     //-         v-img(:src="props.item.author_image" height="40px" width="40px")
     //-     v-alert(slot="no-results" :value="true" color="error" icon="warning") Your search for "{{ search }}" found no results.
     v-card-text
-      v-timeline
+      v-timeline(:dense="$vuetify.breakpoint.smAndDown" :clipped="$vuetify.breakpoint.smAndDown")
         v-timeline-item(
           v-for="n in store.evidenceInFeed.filter(function (evidence) { return evidence.newEvidence.evidence_way === $props.currentWay })"
         :key="n.id"
         color="primary"
-        dense
         light
         )
           span(slot="icon")
             v-img(:src="n.author_image" height="60px" width="60px")
-          span(slot="opposite") 
+          span.hidden-sm-and-down(slot="opposite") 
             h3 {{n.newEvidence.evidence_type}}
           v-card.elevation-2
             v-card-title 
