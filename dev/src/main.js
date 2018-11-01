@@ -5,12 +5,24 @@ import router from './router'
 import store from './store'
 import ability from './ability'
 import { abilitiesPlugin } from '@casl/vue'
+// import { Connect } from 'uport-connect'
+
+// const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
 
 import 'vuetify/dist/vuetify.min.css' 
 import './style/site.css'
 
 // index.js or main.js
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
+// uport.requestDisclosure({
+//   requested: ['name','country'],
+//   notifications: true
+// })
+// uport.onResponse('disclosureReq').then(payload => {
+//   const address = payload.address
+//   console.log(payload)
+// })
 
 Vue.use(abilitiesPlugin, ability)
 
