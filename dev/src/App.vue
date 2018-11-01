@@ -8,7 +8,7 @@
       light
       app)
       v-card.pa-3(dark)
-        h2 Top 5 Ways Crypto will Change the World
+        h2 Top 5 Ways Crypto is Changing the World
       v-list
         v-list-tile(
           router
