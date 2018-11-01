@@ -1,7 +1,7 @@
 service cloud.firestore {
   match /databases/{database}/documents {
     match /visitors/{visitor} {
-      allow read: if true;
+      allow read, write: if true;
       allow create: if true;
     }
     match /{document=**} {
