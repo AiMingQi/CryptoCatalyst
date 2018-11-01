@@ -6,9 +6,12 @@
         h2 Our theory is that there are 5 types of ways that Crypto will change the world. 
         v-btn(to="/all-evidence" color="secondary") See the Evidence of the Reaction
         h2 This is a collection of the evidence of the reaction taking place.
-        v-btn(@click.prevent="uportAdd") Share who you are with uport
+        br
+        v-btn(@click.prevent="uportAdd") Share who you are with uPort
+        a(href="https://www.uport.me" target="_blank" rel="noopener") Get uPort
         h1 Welcome 
-        h2 {{name.payload.name}}
+        h2 {{name.payload.name}} 
+        h3 From {{name.payload.country}} 
 </template>
 
 <script>
@@ -21,7 +24,8 @@ export default {
     return {
       name: {
         payload: {
-          name: 'Friend'
+          name: 'Friend',
+          country: 'Earth'
         }
       }
     }
