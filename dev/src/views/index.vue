@@ -10,11 +10,18 @@
         v-btn(@click.prevent="uportAdd" color="rgb(92, 80, 202)") Share who you are with uPort
         a(href="https://www.uport.me" target="_blank" rel="noopener") Get uPort
         h1 Welcome 
-        h2 {{name.payload.name}} 
-        h3 From {{name.payload.country}} 
+        h2 {{visitor.payload.name}} 
+        h3 From {{visitor.payload.country}} 
+        v-card.mt-5(light)
+          h1 Distinguished Guests
+          v-card(v-for="visitor in store.visitorsInFeed")
+            h2.my-2.py-3 {{visitor.visitor.name}} from {{visitor.visitor.country}}
 </template>
 
 <script>
+import { store } from '../store';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import { Connect } from 'uport-connect'
 
 const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
@@ -22,12 +29,13 @@ const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
 export default {
   data () {
     return {
-      name: {
+      visitor: {
         payload: {
           name: 'Friend',
           country: 'Earth'
         }
-      }
+      },
+      store
     }
   },
   updated () {
@@ -41,10 +49,28 @@ export default {
       })
       uport.onResponse('disclosureReq').then(payload => {
         const address = payload.address
-        this.name = payload
+        this.visitor = payload
         console.log(payload)
-        console.log(this.name)
+        console.log(this.visitor)
+        this.submitVisitor(this.visitor)
       })
+      
+    },
+    submitVisitor () {
+      if (this.visitor.payload.name !== 'Friend') {
+        // Native form submission is not yet supported
+        store.writeVisitor(this.visitor);
+        console.log('trying to send')
+        console.log(this.visitor)
+        // this.$router.push('/all-evidence')
+      }
+    }
+  },
+  computed: {
+    newVisitor () {
+      return {
+        someone: this.visitor
+      }
     }
   }
 }
