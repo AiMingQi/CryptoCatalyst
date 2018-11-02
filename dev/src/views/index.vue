@@ -17,7 +17,9 @@
         v-card.mt-5(light)
           h1 Distinguished Guests
           v-card(v-for="visitor in store.visitorsInFeed")
-            h2.my-2.py-3 {{visitor.visitor.name}} from {{visitor.visitor.country}}
+            v-card-title
+              v-img(:src="visitor.visitor.avatar.uri" max-height="100px" max-width="100px" )
+              h2.my-2.py-3.ml-3 {{visitor.visitor.name}} from {{visitor.visitor.country}}
 </template>
 
 <script>
@@ -46,7 +48,7 @@ export default {
   methods: {
     uportAdd () {
       uport.requestDisclosure({
-        requested: ['name','country'],
+        requested: ['name','country','email','avatar'],
         notifications: true
       })
       uport.onResponse('disclosureReq').then(payload => {
