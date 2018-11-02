@@ -7,7 +7,9 @@
         v-btn(to="/all-evidence" color="secondary") See the Evidence of the Reaction
         h2 This is a collection of the evidence of the reaction taking place.
         br
-        v-btn(@click.prevent="uportAdd" color="rgb(92, 80, 202)") Share who you are with uPort
+        p Sign our 
+        v-btn(@click.prevent="uportAdd" color="rgb(92, 80, 202)") Distinguished Guest Book with uPort
+        br
         a(href="https://www.uport.me" target="_blank" rel="noopener") Get uPort
         h1 Welcome 
         h2 {{visitor.payload.name}} 
