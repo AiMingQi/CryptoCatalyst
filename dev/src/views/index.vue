@@ -15,18 +15,19 @@
         h2 {{visitor.payload.name}} 
         h3 From {{visitor.payload.country}} 
         v-card.mt-5(light)
-          h1 Distinguished Guests
+          h1 Distinguished Guests*
           v-card(v-for="visitor in store.visitorsInFeed")
             v-card-title
               v-img(:src="visitor.visitor.avatar.uri" max-height="100px" max-width="100px" )
               h2.my-2.py-3.ml-3 {{visitor.visitor.name}} from {{visitor.visitor.country}}
+          h6.py-3 *The first 11 unique individuals to sign the distinguished guest book with a valid email address, will receive 100 ADA upon validation.
         v-dialog(
           v-model="dialog"
           width="500px"
         )
-          v-btn(slot="activator") Click Me
+          //- v-btn(slot="activator") Click Me
           v-card
-            v-card-text
+            v-card-text.text-xs-left
               h2 Thanks for signing the guest book 
               h2.primary--text.mt-3 {{visitor.payload.name}} From {{visitor.payload.country}} 
               h3.mt-3 Learning Moment:
