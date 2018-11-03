@@ -1,0 +1,4 @@
+This is a Brave Payments publisher verification file.
+
+Domain: crypto-catalyst.com
+Token: a6beb3afabf5b945e8675d43ac011073f9fa48080abbb50b8f861829fba51a57

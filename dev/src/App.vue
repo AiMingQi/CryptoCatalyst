@@ -35,6 +35,9 @@
       span.ml-5 &copy; 2018 Crypto Catalyst 
       //- span.ml-5 {{store.currentUser.displayName}}
       v-spacer
+      span
+        a(href="https://brave.com/cry696" target="_blank" rel="noopener") Use Brave Browser
+      v-spacer
       v-btn(@click.prevent="signInWithGoogle" v-if="store.currentUser == null") Login
       
 
