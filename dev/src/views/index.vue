@@ -20,6 +20,21 @@
             v-card-title
               v-img(:src="visitor.visitor.avatar.uri" max-height="100px" max-width="100px" )
               h2.my-2.py-3.ml-3 {{visitor.visitor.name}} from {{visitor.visitor.country}}
+        v-dialog(
+          v-model="dialog"
+          width="500px"
+        )
+          v-btn(slot="activator") Click Me
+          v-card
+            v-card-text
+              h2 Thanks for signing the guest book 
+              h2.primary--text.mt-3 {{visitor.payload.name}} From {{visitor.payload.country}} 
+              h3.mt-3 Learning Moment:
+              p So what just happened was you created a private key pair with us that is stored on the Ethereum blockchain using uPort.  Now you have your own private key that you control with some embedded information like your name, picture, location, email, &amp; phone.  
+              p Anytime you are at a site that supports uPort and needs that information you can use it as a login device.  Think of it as like an FB or Google single sign on.  Only instead of your information being stored, tracked and owned by those companies, it is stored on the blockchain and controlled completely by you.  If you want to change or delete it you can.
+            v-card-actions
+              v-spacer
+              v-btn(@click.stop="dialog = false") Close
 </template>
 
 <script>
@@ -33,6 +48,7 @@ const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
 export default {
   data () {
     return {
+      dialog: false,
       visitor: {
         payload: {
           name: 'Friend',
@@ -67,6 +83,7 @@ export default {
         console.log('trying to send')
         console.log(this.visitor)
         // this.$router.push('/all-evidence')
+        this.dialog = true
       }
     }
   },
