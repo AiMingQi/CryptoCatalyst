@@ -44,17 +44,17 @@ export default new Router({
     {
       path: '/all-evidence',
       name: 'allevidence',
-      component: () => import(/* webpackChunkName: "supplychaintransparency" */ './views/all-evidence.vue')
+      component: () => import(/* webpackChunkName: "allevidence" */ './views/all-evidence.vue')
     },
     {
       path: '/submit-evidence',
       name: 'submitevidence',
-      component: () => import(/* webpackChunkName: "supplychaintransparency" */ './views/submit-evidence.vue')
+      component: () => import(/* webpackChunkName: "submitevidence" */ './views/submit-evidence.vue')
     },
     {
       path: '/visualization-playground',
       name: 'visualizationplayground',
-      component: () => import(/* webpackChunkName: "supplychaintransparency" */ './views/visualization-playground.vue')
+      component: () => import(/* webpackChunkName: "visualizationplayground" */ './views/visualization-playground.vue')
     }
   ]
 })
