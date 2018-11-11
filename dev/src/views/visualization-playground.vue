@@ -2,53 +2,67 @@
   div
     h1 Visualization Playground
     v-card
-      <svg width="500" height="270">
-        <g style="transform: translate(0, 10px)">
-          <path :d="line" />
-        </g>
-      </svg>
+      responsive-area-chart.area-chart(
+        @select="onSelect"
+        :data="data"
+        :ceil="max"
+        )
+      div.content
+        h3 Selected Value: {{currentValue}}
+      div
+        label Record Count:
+        input(v-model:value="itemCount")
+      div
+        label Min Value:
+        input(v-model:value="min")
+      div
+        label Max Value:
+        input(v-model:value="max")
 </template>
+
+
 <script>
-import * as d3 from 'd3';
+import ResponsiveAreaChart from '../components/responsive-area-chart.vue';
+import generateData from '../randomData';
 export default {
-  name: 'vue-line-chart',
+  name: 'app',
   data() {
     return {
-      data: [99, 71, 78, 25, 36, 92],
-      line: '',
+      data: [],
+      chartWidth: 0,
+      currentValue: null,
+      itemCount: 25,
+      min: 10,
+      max: 100,
     };
   },
   mounted() {
-    this.calculatePath();
+    setInterval(() => {
+      this.data = generateData(this.itemCount,
+        parseInt(this.min, 10),
+        parseInt(this.max, 10));
+    }, 2000);
   },
   methods: {
-    getScales() {
-      const x = d3.scaleTime().range([0, 430]);
-      const y = d3.scaleLinear().range([210, 0]);
-      d3.axisLeft().scale(x);
-      d3.axisBottom().scale(y);
-      x.domain(d3.extent(this.data, (d, i) => i));
-      y.domain([0, d3.max(this.data, d => d)]);
-      return { x, y };
+    onSelect(value) {
+      this.currentValue = value;
     },
-    calculatePath() {
-      const scale = this.getScales();
-      const path = d3.line()
-        .x((d, i) => scale.x(i))
-        .y(d => scale.y(d));
-      this.line = path(this.data);
-    },
+  },
+  components: {
+    ResponsiveAreaChart,
   },
 };
 </script>
 
 <style scoped>
-svg {margin: 25px;}
-  
-path {
-  fill: none;
-  stroke: #76BF8A;
-  stroke-width: 3px;
+h1, .content {
+  margin-left: 20px;
   }
-  
+label{
+  display: inline-block;
+  width: 150px;
+  }
+.area-chart {
+    height: 300px;
+  }
 </style>
