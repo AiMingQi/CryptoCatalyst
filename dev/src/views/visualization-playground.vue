@@ -1,13 +1,12 @@
-<template>
-  <div>
-    <svg @mousemove="mouseover" :width="width" :height="height">
-      <g :style="{transform: `translate(${margin.left}px, ${margin.top}px)`}">
-        <path class="area" :d="paths.area" />
-        <path class="line" :d="paths.line" />
-        <path class="selector" :d="paths.selector" />
-      </g>
-    </svg>
-  </div>
+<template lang="pug">
+  div
+    h1 Visualization Playground
+    v-card
+      svg(@mousemove="mouseover" :width="width" :height="height")
+        g(:style="{transform: `translate(${margin.left}px, ${margin.top}px)`}")
+          path.aread(:d="paths.area")
+          path.line(:d="paths.line")
+          path.selector(:d="paths.selector")
 </template>
 
 <script>
