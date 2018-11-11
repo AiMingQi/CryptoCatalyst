@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 import ability from './ability'
 import { abilitiesPlugin } from '@casl/vue'
+import d3 from 'd3'
 // import { Connect } from 'uport-connect'
 
 // const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
