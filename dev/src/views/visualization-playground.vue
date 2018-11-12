@@ -7,17 +7,20 @@
         :data="data"
         :ceil="max"
         )
-      div.content
+      v-card.content
         h3 Selected Value: {{currentValue}}
-      div
-        label Record Count:
-        input(v-model:value="itemCount")
-      div
-        label Min Value:
-        input(v-model:value="min")
-      div
-        label Max Value:
-        input(v-model:value="max")
+        div
+          label Record Count:
+          input(v-model:value="itemCount")
+        div
+          label Min Value:
+          input(v-model:value="min")
+        div
+          label Max Value:
+          input(v-model:value="max")
+        div.my-5
+          h3 Thank you to Tyrone Tudehope for helping us understand how to get this going.
+          a(href="https://medium.com/tyrone-tudehope/composing-d3-visualizations-with-vue-js-c65084ccb686" target="_blank" rel="noopener") Check out the Tutorial
 </template>
 
 
