@@ -1,4 +1,4 @@
-# dev
+# Crypto-Catalyst Vuejs Project
 
 ## Project setup
 ```
