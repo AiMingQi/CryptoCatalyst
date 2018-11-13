@@ -18,7 +18,7 @@
           h1 Distinguished Guests*
           v-card(v-for="visitor in store.visitorsInFeed")
             v-card-title
-              //- v-img(:src="visitor.visitor.avatar.uri" max-height="100px" max-width="100px" )
+              v-img(:src="visitor.visitor.avatar.uri" height="100px" max-height="100px" max-width="100px" min-height="100px" min-width="100px" v-if="visitor.visitor.avatar.uri !== undefined")
               h2.my-2.py-3.ml-3 {{visitor.visitor.name}} from {{visitor.visitor.country}}
           h6.py-3 *The first 11 unique individuals to sign the distinguished guest book with a valid email address, will receive 100 ADA upon validation.
         v-dialog(
