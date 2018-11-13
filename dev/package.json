@@ -21,6 +21,7 @@
     "vue-analytics": "^5.16.0",
     "vue-moment": "^4.0.0",
     "vue-router": "^3.0.1",
+    "vue-router-sitemap": "^0.0.3",
     "vuetify": "^1.2.9",
     "vuex": "^3.0.1"
   },
