@@ -1,4 +1,4 @@
-var CACHE_NAME = 'site-cache-v4';
+var CACHE_NAME = 'site-cache-v1.5';
 var urlsToCache = [
   '/',
 ];
