@@ -44,7 +44,7 @@
       //- span.ml-5 {{store.currentUser.displayName}}
       v-spacer
       v-btn(href="https://brave.com/cry696" target="_blank" rel="noopener") Use Brave Browser
-      v-btn(@click.prevent="signInWithGoogle" v-if="store.currentUser == null") Login
+      //- v-btn(@click.prevent="signInWithGoogle" v-if="store.currentUser == null") L
       
 
 </template>
