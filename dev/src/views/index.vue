@@ -4,24 +4,25 @@
       div.pa-3.text-xs-center
         v-img(src="/main-logo.png" alt="Crypto Catalyst Logo" max-width="400px" class="mb-5 center" style="margin: 0 auto;")
         h2 Our theory is that there are 5 types of ways that Crypto will change the world. 
-        v-btn(to="/all-evidence" color="secondary") See the Evidence of the Reaction
+        v-btn.black--text(to="/all-evidence" color="primary" large) See the Evidence of the Reaction
         h2 This is a collection of the evidence of the reaction taking place.
         br
-        p Sign our 
-        v-btn(@click.prevent="uportAdd" color="rgb(92, 80, 202)") Distinguished Guest Book with uPort
-        br
-        a(href="https://www.uport.me" target="_blank" rel="noopener") Get uPort
-        h1 Welcome 
-        h2 {{visitor.payload.name}} 
-        h3 From {{visitor.payload.country}} 
         v-card.mt-5(light)
-          h1 Distinguished Guests*
-          v-card.text-xs-center.text-sm-left(v-for="visitor in store.visitorsInFeed")
-            v-card-title
-              v-img.mx-auto.hidden-md-and-up(:src="visitor.visitor.avatar.uri" height="150px" max-height="150px" width="150px" max-width="150px" min-height="100px" min-width="100px" v-if="visitor.visitor.avatar.uri !== undefined")
-              v-img.hidden-sm-and-down(:src="visitor.visitor.avatar.uri" height="150px" max-height="150px" width="150px" max-width="150px" min-height="100px" min-width="100px" v-if="visitor.visitor.avatar.uri !== undefined")
-              h2.my-2.py-3.ml-3 {{visitor.visitor.name}} from {{visitor.visitor.country}}
-          h6.py-3 *The first 11 unique individuals to sign the distinguished guest book with a valid email address, will receive 100 ADA upon validation.
+          v-card-title
+            h1 Welcome {{visitor.payload.name}} From {{visitor.payload.country}} 
+          v-card-text
+            p Please sign our 
+            v-btn.white--text(@click.prevent="uportAdd" color="rgb(92, 80, 202)") Distinguished Guest Book with uPort
+            br
+            a(href="https://www.uport.me" target="_blank" rel="noopener") Get uPort
+            v-card(dark).mt-5
+              h1 Distinguished Guests*
+              v-card.text-xs-center.text-sm-left(v-for="visitor in store.visitorsInFeed")
+                v-card-title
+                  v-img.mx-auto.hidden-md-and-up(:src="visitor.visitor.avatar.uri" height="150px" max-height="150px" width="150px" max-width="150px" min-height="100px" min-width="100px" v-if="visitor.visitor.avatar.uri !== undefined")
+                  v-img.hidden-sm-and-down(:src="visitor.visitor.avatar.uri" height="150px" max-height="150px" width="150px" max-width="150px" min-height="100px" min-width="100px" v-if="visitor.visitor.avatar.uri !== undefined")
+                  h2.my-2.py-3.ml-3 {{visitor.visitor.name}} from {{visitor.visitor.country}}
+            h6.py-3 *The first 11 unique individuals to sign the distinguished guest book with a valid email address, will receive 100 ADA upon validation.
         v-dialog(
           v-model="dialog"
           width="500px"
