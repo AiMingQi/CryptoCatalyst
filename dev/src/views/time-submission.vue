@@ -6,14 +6,16 @@
           v-card-title
             h1 Time Submission
           v-card-text
-            P Please Enter Your Name
+            P 1. Please Enter Your Name
             v-text-field(v-model="name")
-            P Please Enter a Description of the Reaction You Performed
+            P 2. Please Enter a Description of the Reaction You Performed
             v-textarea(v-model="description")
-            p Please Enter the Date of the Reaction
+            p 3. Please Enter the Date of the Reaction
             v-date-picker(landscape reactive v-model="date")
-            p Please Indicate How Much Time You Committed to the Reaction
+            p 4. Please Indicate How Much Time You Committed to the Reaction
             v-text-field(mask="##" label="In whole hours" v-model="time")
+            p 5. Your MetaMask address that can accept ERC20 Tokens
+            v-text-field( label="ETH Address" v-model="ethaddress")
         v-card
           v-card-title
             h1 Thank You 
@@ -25,7 +27,7 @@
             p.primary--text {{description}}
             h3 on 
               span.primary--text {{date}}
-            P {{timeSubmission}}
+            //- P {{timeSubmission}}
           v-card-actions
             v-btn.black--text(@click.stop="uportAdd" block large color="primary") Submit
 
@@ -45,6 +47,7 @@ const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
         date: new Date().toISOString().substr(0, 10),
         name: '',
         description: '',
+        ethaddress: '',
         time: 0,
         store
       }
@@ -93,7 +96,8 @@ const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
         timesub_date: this.date,
         timesub_name: this.name,
         timesub_description: this.description,
-        timesub_time: this.time
+        timesub_time: this.time,
+        timesub_ethaddress: this.ethaddress
         }
       }
     }
