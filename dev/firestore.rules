@@ -4,6 +4,10 @@ service cloud.firestore {
       allow read, write: if true;
       allow create: if true;
     }
+    match /timesubmissions/{timesubmission} {
+      allow read, write: if true;
+      allow create: if true;
+    }
     match /{document=**} {
       allow read: if true;
       allow create: if request.auth.uid != null && request.auth.uid == request.resource.data.author;
