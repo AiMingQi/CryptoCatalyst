@@ -25,29 +25,70 @@
             p.primary--text {{description}}
             h3 on 
               span.primary--text {{date}}
-            P {{submission}}
+            P {{timeSubmission}}
           v-card-actions
-            v-btn.black--text(@click.stop="submit" block large color="primary") Submit
+            v-btn.black--text(@click.stop="uportAdd" block large color="primary") Submit
 
 
 </template>
 <script>
+import { store } from '../store';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import { Connect } from 'uport-connect'
+
+const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
+
   export default {
     data () {
       return {
         date: new Date().toISOString().substr(0, 10),
         name: '',
         description: '',
-        time: 0
+        time: 0,
+        store
       }
+    },
+    updated () {
+      this.uportAdd
     },
     methods: {
-      submit () {
-        alert('Submission Occurs')
+      uportAdd () {
+        uport.requestDisclosure({
+          requested: ['name','country','email','avatar'],
+          notifications: true
+        })
+        uport.onResponse('disclosureReq').then(payload => {
+          const address = payload.address
+          this.visitor = payload
+          console.log(payload)
+          console.log(this.visitor)
+          this.submitTime(this.visitor)
+        })
+      },
+      submitTime () {
+        if (this.name !== '') {
+          // Native form submission is not yet supported
+          store.writeTimeSubmission(this.timeSubmission, this.visitor);
+          console.log('trying to send')
+          console.log(this.timeSubmission, this.visitor)
+        } else {
+          console.log('fail')
+        }
+      },
+      submitVisitor () {
+      if (this.visitor.payload.name !== 'Friend') {
+        // Native form submission is not yet supported
+        store.writeVisitor(this.visitor);
+        console.log('trying to send')
+        console.log(this.visitor)
+        // this.$router.push('/all-evidence')
+        this.dialog = true
       }
+    }
     },
     computed: {
-      submission () {
+      timeSubmission () {
         return {
         timesub_date: this.date,
         timesub_name: this.name,

@@ -82,7 +82,6 @@ export default {
         console.log(this.visitor)
         this.submitVisitor(this.visitor)
       })
-      
     },
     submitVisitor () {
       if (this.visitor.payload.name !== 'Friend') {

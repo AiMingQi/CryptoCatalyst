@@ -23,6 +23,9 @@ const evidencesCollection = firebase.firestore()
 // a reference to the Evidences collection
 const visitorsCollection = firebase.firestore()
   .collection('visitors');
+// a reference to the Evidences collection
+const timeSubmissionCollection = firebase.firestore()
+  .collection('timesubmissions');
 
 // the shared state object that any vue component
 // can get access to
@@ -46,6 +49,14 @@ export const store = {
       visitor: visitor.payload
     };
     return visitorsCollection.add(dt).catch(e => console.error('error inserting', dt, e));
+  },
+  writeTimeSubmission: (timeSubmission, visitor) => {
+    const dt = {
+      createdOn: new Date(),
+      visitor: visitor.payload,
+      timeSubmission
+    };
+    return timeSubmissionCollection.add(dt).catch(e => console.error('error inserting', dt, e));
   }
   // voteOnEvidence: (newVote) => {
   //   const dt = {
@@ -96,6 +107,20 @@ visitorsCollection
     });
     console.log('Received Visitor feed:', visitors);
     store.visitorsInFeed = visitors;
+  });
+
+timeSubmissionCollection
+  .orderBy('createdOn', 'desc')
+  .limit(100)
+  .onSnapshot((timeSubmissionRef) => {
+    const timeSubmissions = [];
+    timeSubmissionRef.forEach((doc) => {
+      const timeSubmission = doc.data();
+      timeSubmission.id = doc.id;
+      timeSubmissions.push(timeSubmission);
+    });
+    console.log('Received timeSubmission feed:', timeSubmissions);
+    store.timeSubmissionsInFeed = timeSubmissions;
   });
 
 // votesCollection
