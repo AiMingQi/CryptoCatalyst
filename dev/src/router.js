@@ -60,6 +60,11 @@ export default new Router({
       path: '/visualization-playground',
       name: 'visualizationplayground',
       component: () => import(/* webpackChunkName: "visualizationplayground" */ './views/visualization-playground.vue')
+    },
+    {
+      path: '/time-submission',
+      name: 'timesubmission',
+      component: () => import(/* webpackChunkName: "visualizationplayground" */ './views/time-submission.vue')
     }
   ]
 })
