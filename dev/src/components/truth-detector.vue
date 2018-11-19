@@ -15,7 +15,6 @@
 
 <script>
 import { store } from '../store';
-import firebase from 'firebase/app';
 import 'firebase/auth';
 export default {
   props: ['evidence_id'],
@@ -30,10 +29,11 @@ export default {
       if (this.totallyTrue === null) {
       this.totallyTrue = true
       store.voteOnEvidence(this.newVote);
-      console.log('make true')} 
+      // console.log('make true')
+      } 
       else {
         this.totallyTrue = true
-        console.log(this.totallyTrue)
+        // console.log(this.totallyTrue)
         store.changeVoteOnEvidence(this.newVote)
       }
     },
@@ -41,10 +41,11 @@ export default {
       if (this.totallyTrue === null) {
       this.totallyTrue = false
       store.voteOnEvidence(this.newVote);
-      console.log('make fake')}
+      // console.log('make fake')
+      }
       else {
         this.totallyTrue = false
-        console.log(this.totallyTrue)
+        // console.log(this.totallyTrue)
         store.changeVoteOnEvidence(this.newVote)
       }
     }
@@ -55,9 +56,6 @@ export default {
         totally_true: this.totallyTrue,
         evidence_id: this.evidence_id
       }
-    },
-    votes () {
-      // return firebase.firestore().collection('votes')
     }
   }
 }

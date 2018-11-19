@@ -76,8 +76,8 @@ const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
         uport.onResponse('disclosureReq').then(payload => {
           const address = payload.address
           this.visitor = payload
-          console.log(payload)
-          console.log(this.visitor)
+          // console.log(payload)
+          // console.log(this.visitor)
           this.submitTime(this.visitor)
         })
       },
@@ -85,18 +85,18 @@ const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
         if (this.name !== '') {
           // Native form submission is not yet supported
           store.writeTimeSubmission(this.timeSubmission, this.visitor);
-          console.log('trying to send')
-          console.log(this.timeSubmission, this.visitor)
+          // console.log('trying to send')
+          // console.log(this.timeSubmission, this.visitor)
         } else {
-          console.log('fail')
+          // console.log('fail')
         }
       },
       submitVisitor () {
       if (this.visitor.payload.name !== 'Friend') {
         // Native form submission is not yet supported
         store.writeVisitor(this.visitor);
-        console.log('trying to send')
-        console.log(this.visitor)
+        // console.log('trying to send')
+        // console.log(this.visitor)
         // this.$router.push('/all-evidence')
         this.dialog = true
       }
