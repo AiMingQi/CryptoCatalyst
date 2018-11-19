@@ -47,7 +47,6 @@
 </template>
 <script>
 import { store } from '../store';
-import firebase from 'firebase/app';
 import 'firebase/auth';
 import { Connect } from 'uport-connect'
 
@@ -74,7 +73,6 @@ const uport = new Connect('Crypto-Catalyst', {network: 'mainnet'})
           notifications: true
         })
         uport.onResponse('disclosureReq').then(payload => {
-          const address = payload.address
           this.visitor = payload
           // console.log(payload)
           // console.log(this.visitor)

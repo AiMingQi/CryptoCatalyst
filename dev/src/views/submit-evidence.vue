@@ -53,7 +53,6 @@
 
 <script>
 import { store } from '../store';
-import firebase from 'firebase/app';
 import 'firebase/auth';
 
 export default {
@@ -97,8 +96,8 @@ export default {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
         store.writeEvidence(this.newEvidence);
-        console.log('trying to send')
-        console.log(this.newEvidence)
+        // console.log('trying to send')
+        // console.log(this.newEvidence)
         this.$refs.form.reset()
         this.$router.push('/all-evidence')
       }
