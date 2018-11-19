@@ -42,7 +42,6 @@
 
 <script>
 import { store } from '../store';
-import firebase from 'firebase/app';
 import 'firebase/auth';
 import { Connect } from 'uport-connect'
 
@@ -76,10 +75,9 @@ export default {
         notifications: true
       })
       uport.onResponse('disclosureReq').then(payload => {
-        const address = payload.address
         this.visitor = payload
-        console.log(payload)
-        console.log(this.visitor)
+        // console.log(payload)
+        // console.log(this.visitor)
         this.submitVisitor(this.visitor)
       })
     },
@@ -87,8 +85,8 @@ export default {
       if (this.visitor.payload.name !== 'Friend') {
         // Native form submission is not yet supported
         store.writeVisitor(this.visitor);
-        console.log('trying to send')
-        console.log(this.visitor)
+        // console.log('trying to send')
+        // console.log(this.visitor)
         // this.$router.push('/all-evidence')
         this.dialog = true
       }
