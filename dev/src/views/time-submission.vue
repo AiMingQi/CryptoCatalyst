@@ -5,6 +5,7 @@
         v-card
           v-card-title
             h1 Time Submission
+          v-card-text
             p For every hour of work that you have committed to Crypto-Catalyst you will be rewarded* with 1 CCR** (Crypto-Catalyst-Reaction Token).
             p To receive the token you must fill the form below in completely and accurately, including a clear description of your contribution, the date of the reaction, and your 
               a(href="https://metamask.io/" target="_blank" rel="noopener") MetaMask ETH address 
@@ -16,6 +17,7 @@
             br
             strong **The CCR is an ERC20 token and requires a compatible ETH account to interact with it.  MetaMask creates a web3 layer that will allow you to use the token to interact with our governance model at Aragon.  If you receive the token at another Ethereum address you will probably not have the ability to use the token at Crypto-Catalyst at this time.  If you would like to transfer the token to another party you will need to use a different type of wallet such as MyEtherWallet to complete the transfer.  MetaMask doesn't support sending the token to other parties at this time.  
           v-card-text
+            h1 The All Mighty Time Submission Form
             P 1. Please Enter Your Name
             v-text-field(v-model="name")
             P 2. Please Enter a Description of the Reaction You Performed
@@ -26,7 +28,7 @@
             v-text-field(mask="##" label="In whole hours" v-model="time")
             p 5. Your MetaMask address that can accept ERC20 Tokens
             v-text-field( label="ETH Address" v-model="ethaddress")
-        v-card
+        v-card(light)
           v-card-title
             h1 Thank You 
               span.primary--text {{name}}

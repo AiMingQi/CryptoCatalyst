@@ -28,6 +28,14 @@
         v-card-text
           v-btn(href="https://coinmarketcap.com" target="_blank" rel="noopener" block color="secondary") Coin Market Cap
           v-btn(href="http://foxstreetcompound.org/" target="_blank" rel="noopener" block color="secondary") Fox Street Compound
+        iframe(src="https://view.adex.network?width=300&height=250&slotId=5bf2fa911b1d40001c55541f&slotIpfs=QmYbkwHHzWhPK4K5kfgP9yYkM3DTDLnAdBqWBBETpuJUZp&fallbackImgIpfs=Qmd9x81x4vSg7CptDqM8SPbhCRtGabEUWrWGKTAadn6dZc&fallbackUrl=https%3A%2F%2Fcrypto-catalyst.com"
+            width="300"
+            height="250"
+            scrolling="no"
+            frameBorder="0"
+            style="border: 0;"
+          )
+        p.text-xs-center Our Bread &amp; Butter
 
     v-toolbar.ma-1.banner(fixed app :clipped-left="clipped" height="100px")
       v-toolbar-side-icon(@click="drawer = !drawer")
