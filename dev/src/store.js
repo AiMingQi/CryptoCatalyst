@@ -91,7 +91,7 @@ evidencesCollection
       evidence.id = doc.id;
       evidences.push(evidence);
     });
-    console.log('Received Evidence feed:', evidences);
+    // console.log('Received Evidence feed:', evidences);
     store.evidenceInFeed = evidences;
   });
 
@@ -105,7 +105,7 @@ visitorsCollection
       visitor.id = doc.id;
       visitors.push(visitor);
     });
-    console.log('Received Visitor feed:', visitors);
+    // console.log('Received Visitor feed:', visitors);
     store.visitorsInFeed = visitors;
   });
 
@@ -119,7 +119,7 @@ timeSubmissionCollection
       timeSubmission.id = doc.id;
       timeSubmissions.push(timeSubmission);
     });
-    console.log('Received timeSubmission feed:', timeSubmissions);
+    // console.log('Received timeSubmission feed:', timeSubmissions);
     store.timeSubmissionsInFeed = timeSubmissions;
   });
 
