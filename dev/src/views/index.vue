@@ -11,7 +11,7 @@
               video-id="6oB5lEg5pHA" 
               :player-vars="{autoplay: 0}"
               ) 
-        v-card.pt-5.pb-1.mt-5
+        v-card.pt-5.pb-1.px-3.mt-5
           v-img(src="/main-logo.png" alt="Crypto Catalyst Logo" max-width="400px" class="mb-5 center" style="margin: 0 auto;")
         v-card.mt-5(light)
           v-card-title
