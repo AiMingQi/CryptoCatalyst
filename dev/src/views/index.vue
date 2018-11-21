@@ -2,11 +2,17 @@
   v-layout(column justify-center align-center)
     v-flex(xs12 sm8 md6)
       div.pa-3.text-xs-center
-        v-img(src="/main-logo.png" alt="Crypto Catalyst Logo" max-width="400px" class="mb-5 center" style="margin: 0 auto;")
         h2 Our theory is that there are 5 types of ways that Crypto will change the world. 
         v-btn.black--text(to="/all-evidence" color="primary" large) See the Evidence of the Reaction
         h2 This is a collection of the evidence of the reaction taking place.
-        br
+        v-card.pa-3.ma-1
+          div.videoWrapper
+            youtube(
+              video-id="6oB5lEg5pHA" 
+              :player-vars="{autoplay: 0}"
+              ) 
+        v-card.pt-5.pb-1.mt-5
+          v-img(src="/main-logo.png" alt="Crypto Catalyst Logo" max-width="400px" class="mb-5 center" style="margin: 0 auto;")
         v-card.mt-5(light)
           v-card-title
             h1 Welcome {{visitor.payload.name}} From {{visitor.payload.country}} 
@@ -112,3 +118,18 @@ export default {
 }
 </script>
 
+<style>
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
