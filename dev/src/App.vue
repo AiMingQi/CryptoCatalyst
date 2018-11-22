@@ -43,6 +43,10 @@
       v-spacer
       v-btn(to="/" icon flat)
         v-icon home
+      v-btn(href="mailto:prime@crypto-catalyst.com" target="_blank" rel="noopener" icon flat)
+        v-icon email
+      v-btn(to="/behind-the-curtain" icon flat)
+        v-icon memory
     v-content
       v-container
         router-view
