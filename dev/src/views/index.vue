@@ -44,16 +44,17 @@
             v-card-actions
               v-spacer
               v-btn(@click.stop="dialog = false") Close
-        v-card.pa-4()
-          p.text-xs-center Decentralized Ad
-          iframe(src="https://view.adex.network?width=300&height=250&slotId=5bf2fa911b1d40001c55541f&slotIpfs=QmYbkwHHzWhPK4K5kfgP9yYkM3DTDLnAdBqWBBETpuJUZp&fallbackImgIpfs=Qmd9x81x4vSg7CptDqM8SPbhCRtGabEUWrWGKTAadn6dZc&fallbackUrl=https%3A%2F%2Fwww.adex.network%2F"
-            width="299"
-            height="249"
-            scrolling="no"
-            frameBorder="0"
-            style="border: 0;"
-          )
-          p.text-xs-center Please click the Unicorn
+        v-card.text-xs-center.pa-4()
+          v-card-text.text-xs-center
+            p.text-xs-center Decentralized Ad
+            iframe.mx-auto(src="https://view.adex.network?width=300&height=250&slotId=5bf2fa911b1d40001c55541f&slotIpfs=QmYbkwHHzWhPK4K5kfgP9yYkM3DTDLnAdBqWBBETpuJUZp&fallbackImgIpfs=Qmd9x81x4vSg7CptDqM8SPbhCRtGabEUWrWGKTAadn6dZc&fallbackUrl=https%3A%2F%2Fwww.adex.network%2F"
+              width="299"
+              height="249"
+              scrolling="no"
+              frameBorder="0"
+              style="border: 0;"
+            )
+            p.text-xs-center Please click the Unicorn
 </template>
 
 <script>

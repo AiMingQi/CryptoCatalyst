@@ -15,6 +15,17 @@
             div(v-html="scene.description")
             v-btn.mt-5(:to="scene.exampleLink" block large) Visit Example
             v-btn(color="secondary" :href="scene.vendorLink" target="_blank" rel="noopener" block large) Our Vendor
+        v-card.mt-4.pa-4()
+          p.text-xs-center Decentralized Ad
+          div.text-xs-center
+            iframe.text-xs-center.mx-auto(src="https://view.adex.network?width=300&height=250&slotId=5bf2fa911b1d40001c55541f&slotIpfs=QmYbkwHHzWhPK4K5kfgP9yYkM3DTDLnAdBqWBBETpuJUZp&fallbackImgIpfs=Qmd9x81x4vSg7CptDqM8SPbhCRtGabEUWrWGKTAadn6dZc&fallbackUrl=https%3A%2F%2Fwww.adex.network%2F"
+              width="299"
+              height="249"
+              scrolling="no"
+              frameBorder="0"
+              style="border: 0;"
+            )
+          p.text-xs-center Please click the Unicorn
 
 
 </template>
