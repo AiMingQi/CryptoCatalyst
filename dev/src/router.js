@@ -65,6 +65,11 @@ export default new Router({
       path: '/time-submission',
       name: 'timesubmission',
       component: () => import(/* webpackChunkName: "visualizationplayground" */ './views/time-submission.vue')
+    },
+    {
+      path: '/behind-the-curtain',
+      name: 'behindthecurtain',
+      component: () => import(/* webpackChunkName: "visualizationplayground" */ './views/behind-the-curtain.vue')
     }
   ]
 })
