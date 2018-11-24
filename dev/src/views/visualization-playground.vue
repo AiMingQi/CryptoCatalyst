@@ -1,31 +1,36 @@
 <template lang="pug">
   div
     h1 Visualization Playground
-    v-card
-      responsive-area-chart.area-chart(
-        @select="onSelect"
-        :data="data"
-        :ceil="max"
-        )
-      v-card.content
-        h3 Selected Value: {{currentValue}}
-        div
-          label Record Count:
-          input(v-model:value="itemCount")
-        div
-          label Min Value:
-          input(v-model:value="min")
-        div
-          label Max Value:
-          input(v-model:value="max")
-        div.my-5
-          h3 Thank you to Tyrone Tudehope for helping us understand how to get this going.
-          a(href="https://medium.com/tyrone-tudehope/composing-d3-visualizations-with-vue-js-c65084ccb686" target="_blank" rel="noopener") Check out the Tutorial
+    v-card.pa-3
+      coin-data
+    //- v-card
+    //-   responsive-area-chart.area-chart(
+    //-     @select="onSelect"
+    //-     :data="data"
+    //-     :ceil="max"
+    //-     )
+    //-   v-card.content
+    //-     h3 Selected Value: {{currentValue}}
+    //-     div
+    //-       label Record Count:
+    //-       input(v-model:value="itemCount")
+    //-     div
+    //-       label Min Value:
+    //-       input(v-model:value="min")
+    //-     div
+    //-       label Max Value:
+    //-       input(v-model:value="max")
+    //-     div.my-5
+    //-       h3 Thank you to Tyrone Tudehope for helping us understand how to get this going.
+    //-       a(href="https://medium.com/tyrone-tudehope/composing-d3-visualizations-with-vue-js-c65084ccb686" target="_blank" rel="noopener") Check out the Tutorial
+    
+
 </template>
 
 
 <script>
 import ResponsiveAreaChart from '../components/responsive-area-chart.vue';
+import CoinData from '../components/coin-data.vue';
 import generateData from '../randomData';
 export default {
   name: 'app',
@@ -53,6 +58,7 @@ export default {
   },
   components: {
     ResponsiveAreaChart,
+    CoinData
   },
 };
 </script>

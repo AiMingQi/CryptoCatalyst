@@ -6,6 +6,10 @@ import store from './store'
 import ability from './ability'
 import { abilitiesPlugin } from '@casl/vue'
 import VueYouTubeEmbed from 'vue-youtube-embed'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
 
 Vue.use(VueYouTubeEmbed)
 
