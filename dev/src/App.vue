@@ -43,10 +43,10 @@
       v-spacer
       v-btn(to="/" icon flat)
         v-icon home
-      v-btn(href="mailto:prime@crypto-catalyst.com" target="_blank" rel="noopener" icon flat)
-        v-icon email
       v-btn(to="/behind-the-curtain" icon flat)
         v-icon memory
+      v-btn(to="/visualization-playground" icon flat)
+        v-icon remove_red_eye
     v-content
       v-container
         router-view
@@ -56,6 +56,8 @@
       v-spacer
       v-btn(href="https://brave.com/cry696" target="_blank" rel="noopener") Use Brave Browser
       //- v-btn(@click.prevent="signInWithGoogle" v-if="store.currentUser == null") L
+      v-btn(href="mailto:prime@crypto-catalyst.com" target="_blank" rel="noopener" icon flat)
+        v-icon email
       
 
 </template>
