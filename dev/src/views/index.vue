@@ -2,7 +2,7 @@
   v-layout(column justify-center align-center)
     v-flex(xs12 sm8 md6)
       div.pa-3.text-xs-center
-        h2 Our theory is that there are 5 types of ways that Crypto will change the world. 
+        h2 There are 5 types of ways that Crypto is changing the world. 
         v-btn.black--text(to="/all-evidence" color="primary" large) See the Evidence of the Reaction
         h2 This is a collection of the evidence of the reaction taking place.
         v-card.pa-3.ma-1
