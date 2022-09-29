@@ -12,7 +12,7 @@
     "@casl/vue": "^0.4.3",
     "axios": "^0.18.0",
     "casl": "^1.1.0",
-    "d3": "^5.7.0",
+    "d3": "^7.6.1",
     "firebase": "^5.5.4",
     "material-design-icons-iconfont": "^3.0.3",
     "moment": "^2.22.2",
